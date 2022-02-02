@@ -56,23 +56,18 @@ def dfs_hidden(obj, already):
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 def decodeHuff(root, s):
     
-    current_index = root
+    current_root = root
     result = ''
-    print
     for item in s:
-        if item == '0':
-            current_index = current_index.left
-            if not current_index.left:
-                result += current_index.data
-                current_index = root
-        else:    
-            current_index = current_index.right
-            if not current_index.right:
-                result += current_index.data
-                current_index = root
-        
+        current_root = current_root.left if item == '0' else current_root.right
+        #if both are None
+        if current_root.left == current_root.right:
+            result += current_root.data
+            current_root = root
+    
     print(result)
-
+    
+    
 ip = input()
 freq = {}#maps each character to its frequency
 
