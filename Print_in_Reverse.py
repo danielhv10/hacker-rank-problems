@@ -65,6 +65,15 @@ def reversePrint(llist):
     while(len(stack) > 0):
         print(stack.pop())       
     
+def reversePrintRecursive(llist):
+    # Write your code here
+    
+    if(llist == None):
+        return
+    
+    reversePrintRecursive(llist.next)
+    
+    print(llist.data)
 if __name__ == '__main__':
     tests = int(input())
 
