@@ -36,6 +36,23 @@ def insertionSort2(n, arr):
        
         print(' '.join(map(str, arr)))               
          
+            
+def insertionSort2_simpler_version(n, arr):
+    # Write your code here
+    
+    for index_i in range(1,n):
+        aux = arr[index_i]
+        
+        index_p = index_i -1
+        
+        while aux < arr[index_p] and index_p >= 0:
+            arr[index_p +1] = arr[index_p]
+            index_p -=1
+        
+        arr[index_p +1] = aux
+       
+        print(' '.join(map(str, arr)))               
+         
         
 
 if __name__ == '__main__':
